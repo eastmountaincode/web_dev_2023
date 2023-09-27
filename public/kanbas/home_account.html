@@ -1,46 +1,99 @@
 <!DOCTYPE html>
 <html lang="en"> 
     <head>
-        <title>
-            Home
-        </title>
+        <title>Account</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/c3ebb3a7f0.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <table>
-            <tr>
-                <!--Kanbas Navigation Sidebar-->
-                <td align="left" valign="top">
-                    <ul>
-                        <li><a href="home_account.html">Account</a></li>
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="home_courses.html">Courses</a></li>
-                        <li><a href="#">Calendar</a></li>
-                        <li><a href="#">Inbox</a></li>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Studio</a></li>
-                        <li><a href="#">Commons</a></li>
-                        <li><a href="#">Help</a></li>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="custom-sidebar">
+                    <ul class="list-unstyled">
+                        <li class="sidebar-element-logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2V8BuW7n0uy8uY8krUGiY5bXk0LN8RZe4cw&usqp=CAU" alt="northeastern logo"></li>
+                        
+                        <a href="home_account.html">
+                            <li class="icon-text-container sidebar-element-selected">
+                                <i class="fa-regular fa-user sidebar-icon account-icon"></i>
+                                Account
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-gauge sidebar-icon"></i>
+                                Dashboard
+                            </li>
+                        </a>
+                        
+                        <a href="home_courses.html">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-book sidebar-icon"></i>
+                                Courses
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-calendar sidebar-icon"></i>
+                                Calendar
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-inbox sidebar-icon"></i>
+                                Inbox
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-clock sidebar-icon"></i>
+                                History
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-video sidebar-icon"></i>
+                                Studio
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-c sidebar-icon"></i>
+                                Commons
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-circle-info sidebar-icon"></i>
+                                Help
+                            </li>
+                        </a>
                     </ul>
-                </td>
-                <!---Profile Navigation Sidebar-->
-                <td align="left" valign="top">
-                    <ul>
-                        <li><a href="#">Notifications</a></li>
-                        <li><a href="profile/index.html">Profile</a></li>
-                        <li><a href="#">Files</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a href="#">ePortfolios</a></li>
-                        <li><a href="#">Shared Content</a></li>
-                        <li><a href="#">The Hub</a></li>
-                        <li><a href="#">Qwickly Course Tools</a></li>
-                        <li><a href="#">Global Announcements</a></li>
+                </div>
+                <div class="account-nav-sidebar">
+                    <!-- <h6>Jose Annunziatio's Profile</h6>
+                    <hr> -->
+                    <ul class="list-unstyled">
+                        <li class="non-selected-list-item"><a href="#">Notifications</a></li>
+                        <li class="non-selected-list-item"><a href="profile/index.html">Profile</a></li>
+                        <li class="non-selected-list-item"><a href="#">Files</a></li>
+                        <li class="non-selected-list-item"><a href="#">Settings</a></li>
+                        <li class="non-selected-list-item"><a href="#">ePortfolios</a></li>
+                        <li class="non-selected-list-item"><a href="#">Shared Content</a></li>
+                        <li class="non-selected-list-item"><a href="#">The Hub</a></li>
+                        <li class="non-selected-list-item"><a href="#">Qwickly Course Tools</a></li>
+                        <li class="non-selected-list-item" ><a href="#">Global Announcements</a></li>
                     </ul>
-                </td>
-                <!--Profile Display-->
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+                </div>
+            </div>
+        </div>
     </body>
 
 </html>

@@ -1,0 +1,89 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+ } 
+
+.custom-sidebar {
+    background-color: black;
+    color: white;
+    height: 100%;
+    width: 80px;
+    padding: 0;
+    margin: 0;
+
+}
+
+.container-fluid, .row{
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.custom-sidebar a {
+    text-decoration: none;
+}
+
+.sidebar-element-logo img {
+    width: 100%;
+}
+
+.icon-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.74em;
+    /* border: 1px solid blue; */
+    color: white;
+    height: 60px;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 10px;
+
+}
+
+.sidebar-icon {
+    transform: scale(2.0);
+    color: rgb(183, 44, 44);
+    padding-bottom: 5px;
+}
+
+
+.icon-text-container.sidebar-element-selected {
+    background-color: white;
+    color: rgb(183, 44, 44);
+}
+
+.sidebar-icon.account-icon {
+    color: rgb(191, 184, 184);
+}
+
+.icon-text-container:hover {
+    opacity: 0.88;
+    transition: opacity 0.13s;
+}
+
+
+/* ACCOUNT PAGE */
+.account-nav-sidebar {
+    margin: 20px;
+    width: 199px;
+}
+
+.account-nav-sidebar a{
+    text-decoration: none;
+}
+
+.non-selected-list-item a{
+    color: rgb(183, 44, 44);
+}
+
+.non-selected-list-item {
+    margin-bottom: 16px;
+}
+
+.non-selected-list-item:hover {
+    opacity: 0.8;
+}
+
+
