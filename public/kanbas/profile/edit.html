@@ -1,104 +1,168 @@
 <!DOCTYPE html>
 <html lang="en"> 
     <head>
-        <title>
-            Home
-        </title>
+        <title>Edit Profile</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/c3ebb3a7f0.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../index.css">
     </head>
     <body>
-        <table>
-            <tr>
-                <!--Kanbas Navigation Sidebar-->
-                <td align="left" valign="top">
-                    <ul>
-                        <li><a href="../home_account.html">Account</a></li>
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="../home_courses.html">Courses</a></li>
-                        <li><a href="#">Calendar</a></li>
-                        <li><a href="#">Inbox</a></li>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Studio</a></li>
-                        <li><a href="#">Commons</a></li>
-                        <li><a href="#">Help</a></li>
+        <div class="container-fluid main-fluid-container">
+            <div class="row">
+                <div class="custom-sidebar">
+                    <ul class="list-unstyled">
+                        <li class="sidebar-element-logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2V8BuW7n0uy8uY8krUGiY5bXk0LN8RZe4cw&usqp=CAU" alt="northeastern logo"></li>
+                        
+                        <a href="../home_account.html">
+                            <li class="icon-text-container sidebar-element-selected">
+                                <i class="fa-regular fa-user sidebar-icon account-icon"></i>
+                                Account
+                            </li>
+                        </a>
+                        
+                        <a href="../dashboard.html">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-gauge sidebar-icon"></i>
+                                Dashboard
+                            </li>
+                        </a>
+                        
+                        <a href="../course_home.html">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-book sidebar-icon"></i>
+                                Courses
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-calendar sidebar-icon"></i>
+                                Calendar
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-inbox sidebar-icon"></i>
+                                Inbox
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-clock sidebar-icon"></i>
+                                History
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-video sidebar-icon"></i>
+                                Studio
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-c sidebar-icon"></i>
+                                Commons
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-circle-info sidebar-icon"></i>
+                                Help
+                            </li>
+                        </a>
                     </ul>
-                </td>
-                <!---Profile Navigation Sidebar-->
-                <td align="left" valign="top">
-                    <ul>
-                        <li><a href="#">Notifications</a></li>
-                        <li><a href="index.html">Profile</a></li>
-                        <li><a href="#">Files</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a href="#">ePortfolios</a></li>
-                        <li><a href="#">Shared Content</a></li>
-                        <li><a href="#">The Hub</a></li>
-                        <li><a href="#">Qwickly Course Tools</a></li>
-                        <li><a href="#">Global Announcements</a></li>
-                    </ul>
-                </td>
-                <!--Edit Pane-->
-                <td align="left" valign="top">
-                    <h3>Jose Annunziato</h3>
-                    <label for="name_input">Name:</label>
-                    <input type="text" id="name_input" placeholder="Name">
-                    <label for="pronoun_input">Pronouns:</label>
-                    <select>
-                        <option value="NONE">None</option>
-                    </select>
-                    <br>
-                    <br>
+                </div>
+                <!-- container for account nav and profile content -->
+                <div class="header-content-container">
+                    <div class="profile-header">
+                        <h6 class="header-text">Jose Annunziato's Profile</h6>
+                        <hr>
+                    </div>
+                    <div class="profile-content-container">
+                        <div class="account-nav-sidebar">
+                            <ul class="list-unstyled">
+                                <li class="non-selected-list-item"><a href="#">Notifications</a></li>
+                                <li class="selected-list-item"><a href="index.html">Profile</a></li>
+                                <li class="non-selected-list-item"><a href="#">Files</a></li>
+                                <li class="non-selected-list-item"><a href="#">Settings</a></li>
+                                <li class="non-selected-list-item"><a href="#">ePortfolios</a></li>
+                                <li class="non-selected-list-item"><a href="#">Shared Content</a></li>
+                                <li class="non-selected-list-item"><a href="#">The Hub</a></li>
+                                <li class="non-selected-list-item"><a href="#">Qwickly Course Tools</a></li>
+                                <li class="non-selected-list-item" ><a href="#">Global Announcements</a></li>
+                            </ul>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="profile-content col-10">
+                                    <div class="bottom-margin-10">
+                                        <i class="fa fa-user" id="profile-icon" aria-hidden="false"></i>
+                                    </div>
+                                    <div class="edit-profile-flexbox">
+                                        <label for="name_input" class="form-label">Name:</label>
+                                        <input type="text" id="name_input" placeholder="Name" class="form-control">
+                                        <label for="pronoun_input" class="form-label">Pronouns:</label>
+                                        <select class="form-select">
+                                            <option value="NONE">None</option>
+                                        </select>
+                                
+            
 
-                    <label for="title_input">Title:</label>
-                    <input type="text" id="title_input" placeholder="Title">
-                    <br>
-
-                    <h3>Contact</h3>
-                    No registered services, you can add some on the <a href="#">settings</a> page.
-
-                    <h3>Biography</h3>
-                    Faculty, Software Engineer, AI, Space, and renewables ethusiast.
-                    <form id="biography_input">
-                        <textarea cols="60" rows="4">Faculty, Software Engineer, AI, Space, and renewables ethusiast.</textarea>
-                    </form>
-                    <br>
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="#">Youtube</a> Links to an external site.</li>
-                    </ul>
-                    <br>
-                    <table>
-                        <tr>
-                            <th>
-                                Title<br>
-                                <input type="text" value="Youtube" id="title_input_links">
-                            </th>
-                            <th>→
-                            </th>
-                            <th>
-                                URL<br>
-                                <input type="text" value="https://www.youtube.com" id="url_input_links">
-                            </th>
-                            <th>
-                                <a href="#">Remove</a>
-                            </th>
-                        </tr>
-                    </table>
-                    <br>
-                    <button type="button">Add another link</button>
-                    <br>
-                    <button type="button">Cancel</button>
-                    <button type="button">Save Profile</button>
-                    <br>
-                    <a href="index.html"><button type="button">Edit Profile</button></a>
-                    <a href="index.html"><button type="button">Cancel Editing</button></a>
-
-                    
-
- 
-                    
-                </td>
-            </tr>
-        </table>
+                                        <label for="title_input" class="form-label">Title:</label>
+                                        <input type="text" id="title_input" placeholder="Title" class="form-control">
+                                        <br>
+                                        <h4>Contact</h4>
+                                        No registered services, you can add some on the <a href="#" class="red-link">settings</a> page.
+                                        <br>
+                                        <br>
+                                        <h4>Biography</h4>
+                                        <form id="biography_input">
+                                            <textarea cols="60" rows="4" class="form-control" placeholder="Write bio here.">Faculty, Software Engineer, AI, Space, and renewables ethusiast.</textarea>
+                                        </form>
+                                        <br>
+                                        <h4>Links</h4>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-5 text-center">
+                                                    <label for="title_input" class="form-label">Title</label>
+                                                    <input type="text" id="title_input" placeholder="Title" class="form-control">
+                                                </div>
+                                                <div class="col-2 link-right-arrow text-center">
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </div>
+                                                <div class="col-5 text-center">
+                                                    <label for="url_input" class="form-label">URL</label>
+                                                    <input type="text" id="url_input" placeholder="URL" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <button class="btn btn-outline-secondary" type="button">Add another link</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <a href="index.html"><button class="btn btn-secondary" type="button">Cancel</button></a>
+                                    <a href="index.html"><button class="btn btn-danger" type="button">Save Profile</button></a>
+                                </div>
+                                <div class="profile-edit-button col-2">
+                                    <a href="index.html">
+                                        <button class="btn btn-outline-secondary float-end" type="button"><i class="fa-solid fa-pencil right-margin-5"></i>Cancel Editing</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
     </body>
 
 </html>

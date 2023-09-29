@@ -4,6 +4,12 @@ html, body {
     padding: 0;
  } 
 
+.row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
 .custom-sidebar {
     background-color: black;
     color: white;
@@ -11,13 +17,17 @@ html, body {
     width: 80px;
     padding: 0;
     margin: 0;
+    position: fixed;
+    margin-left: 12px;
 
 }
 
-.container-fluid, .row{
+.container-fluid {
+    padding: 0;
+}
+
+.main-fluid-container {
     height: 100%;
-    display: flex;
-    flex-wrap: nowrap;
 }
 
 .custom-sidebar a {
@@ -33,7 +43,6 @@ html, body {
     flex-direction: column;
     align-items: center;
     font-size: 0.74em;
-    /* border: 1px solid blue; */
     color: white;
     height: 60px;
     justify-content: space-between;
@@ -66,8 +75,8 @@ html, body {
 
 /* ACCOUNT PAGE */
 .account-nav-sidebar {
-    margin: 20px;
     width: 199px;
+    max-width: 199px;
 }
 
 .account-nav-sidebar a{
@@ -79,11 +88,184 @@ html, body {
 }
 
 .non-selected-list-item {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .non-selected-list-item:hover {
     opacity: 0.8;
 }
+
+.selected-list-item {
+    color: black;
+    margin-bottom: 16px;
+    border-left: 2px solid black;
+    margin-left: -5px;
+    padding-left: 3px;
+
+}
+.selected-list-item a {
+    color: black;
+}
+
+.selected-list-item:hover {
+    opacity: 0.8;
+}
+
+/* PROFILE TIME */
+
+.header-content-container {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+    padding-left: 80px;
+    flex: 1;
+    margin-bottom: 0;
+    margin-left: 38px;
+}
+
+@media (max-width: 768px) {
+    .header-content-container {
+        display: flex;
+        flex-direction: column;
+        margin: 25px;
+        flex: 1;
+        margin-bottom: 0;
+        margin-left: 38px;
+        padding-left: 0px;
+    }
+
+}
+
+.profile-content-container {
+    display: flex;
+    flex: 1;
+    margin-top: 5px;
+}
+
+#profile-icon {
+    font-size: 124px;
+    color: rgb(144, 144, 144);
+    padding-bottom: 10px;
+}
+
+.profile-content {
+    padding: 0px 40px;
+    margin-bottom: 80px;
+}
+
+.bottom-padding-40 {
+    padding-bottom: 40px;
+}
+
+.red-link {
+    color: rgb(183, 44, 44);
+}
+
+.link-icon {
+    padding-right: 5px;
+}
+
+/* EDIT PROFILE */
+
+.edit-profile-flexbox input,
+.edit-profile-flexbox select {
+    margin-bottom: 10px;
+}
+
+.bottom-margin-10 {
+    margin-bottom: 10px;
+}
+
+.right-margin-5 {
+    margin-right: 5px
+}
+
+.link-right-arrow {
+    margin-top: 38px;
+}
+
+/* DASHBOARD */
+
+.dashboard-header {
+    color: rgb(107, 104, 104);
+}
+
+.dashboard-courses-container {
+    padding-left: 130px;
+    padding-right: 34px;
+
+}
+
+.dashboard-course-card {
+    min-width: 260px;
+    max-width: 260px;
+    margin: 15px;
+    
+
+}
+
+.cards-container {
+    max-width: 1160px;
+    margin-left: -15px
+}
+
+/* COURSES HOME */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #6c757d; 
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -10px;
+}
+
+.bars-icon {
+    margin-right: 20px;
+    margin-top: 6px;
+    margin-left: 3px;
+    transform: scale(1.2);
+    color: rgb(183, 44, 44);
+}
+
+.no-text-decoration {
+    text-decoration: none;
+}
+
+.fa-grip-vertical {
+    color: gray;
+}
+
+.button-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+.button-area .form-select {
+    width: auto;
+    max-width: 100%; /* This ensures that the select doesn't overflow its container */
+}
+
+.button-area .btn-xx {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+
+
+ 
+
 
 
