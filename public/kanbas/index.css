@@ -123,8 +123,18 @@ html, body {
     margin-left: 38px;
 }
 
+.course-header-content-container {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+    padding-left: 80px;
+    flex: 1;
+    margin-bottom: 0;
+    margin-left: 38px;
+}
+
 @media (max-width: 768px) {
-    .header-content-container {
+    .course-header-content-container {
         display: flex;
         flex-direction: column;
         margin: 25px;
@@ -216,10 +226,17 @@ html, body {
 }
 
 .header-container {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: -10px;
+    overflow: auto;
 }
+
+.bars-icon, nav {
+    float: left;
+}
+
+.bars-icon {
+    margin-right: 10px;
+}
+
 
 .bars-icon {
     margin-right: 20px;
@@ -248,7 +265,7 @@ html, body {
 
 .button-area .form-select {
     width: auto;
-    max-width: 100%; /* This ensures that the select doesn't overflow its container */
+    max-width: 100%; 
 }
 
 .button-area .btn-xx {
@@ -256,6 +273,131 @@ html, body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.grey-elip {
+    color: black;
+}
+
+.courses-nav-sidebar-header {
+    font-size: x-small;
+}
+
+.course-module-content {
+    padding: 0px 40px;
+    margin-bottom: 80px;
+    font-size: small;
+}
+
+/* On md screen and smaller, ignore the col-9 attribute*/
+/* so it can take up more horizontal space */
+@media (max-width: 992px) {
+    .course-module-content {
+        width: 100%;
+        flex: none;
+        max-width: 100%;
+    }
+}
+
+.right-button-area .btn {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.subtitle {
+    font-size: x-small;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.small-screen-dark-header {
+    margin-left: -26px;
+    margin-right: -25px;
+    margin-top: -26px;
+    padding: 10px
+}
+
+/* ASSIGNMENTS */
+
+.assignment_search_input {
+    display: block;
+    width: 40%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    
+}
+
+.rounded-rectangle {
+    display: inline-block; 
+    padding: 4px 8px; 
+    border-radius: 25px; 
+    border: 1px solid #aaa;
+}
+
+/* override bootstrap style only on assignment page */
+.assignment_page .list-group,
+.assignment_page .list-group-item {
+    border-radius: 0 !important;
+}
+
+.bootstrap-tagsinput {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    padding: 15px;
+}
+
+.bootstrap-tagsinput input {
+    flex-grow: 1;
+}
+
+.bootstrap-tagsinput .tag {
+    background-color: #ebebeb;
+    color: black !important;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 2.2;
+}
+
+/* GRADES */
+
+.name-color {
+    color: rgb(183, 44, 44) !important;
+}
+
+.center-percentage {
+    text-align: center;
+}
+
+.assignment-name {
+    display: block;
+    text-align: center;
+}
+
+.out-of {
+    font-size: smaller;
+    display: block;
+    text-align: center;
+}
+
+
+
+
+
+
+
 
 
 

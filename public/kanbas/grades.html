@@ -1,118 +1,334 @@
 <!DOCTYPE html>
 <html lang="en"> 
     <head>
-        <title>
-            Courses
-        </title>
+        <title>Grades</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+        <script src="https://kit.fontawesome.com/c3ebb3a7f0.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="index.css">
+
+        <!-- Bootstrap Tags Input CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" />
+
+        <!-- Bootstrap Tags Input JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+
+                
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <table>
-            <tr>
-                <!-- Kanbas Navigation Sidebar-->
-                <td align="left" valign="top">
-                    <ul>
-                        <li><a href="home_account.html">Account</a></li>
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="home_courses.html">Courses</a></li>
-                        <li><a href="#">Calendar</a></li>
-                        <li><a href="#">Inbox</a></li>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Studio</a></li>
-                        <li><a href="#">Commons</a></li>
-                        <li><a href="#">Help</a></li>
+    <body class="assignment_page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="custom-sidebar d-none d-md-block">
+                    <ul class="list-unstyled">
+                        <li class="sidebar-element-logo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2V8BuW7n0uy8uY8krUGiY5bXk0LN8RZe4cw&usqp=CAU" alt="northeastern logo"></li>
+                        
+                        <a href="home_account.html">
+                            <li class="icon-text-container">
+                                <i class="fa-regular fa-user sidebar-icon account-icon"></i>
+                                Account
+                            </li>
+                        </a>
+                        
+                        <a href="dashboard.html">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-gauge sidebar-icon"></i>
+                                Dashboard
+                            </li>
+                        </a>
+                        
+                        <a href="course_home.html">
+                            <li class="icon-text-container sidebar-element-selected">
+                                <i class="fa-solid fa-book sidebar-icon"></i>
+                                Courses
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-calendar sidebar-icon"></i>
+                                Calendar
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-inbox sidebar-icon"></i>
+                                Inbox
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-clock sidebar-icon"></i>
+                                History
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-video sidebar-icon"></i>
+                                Studio
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-c sidebar-icon"></i>
+                                Commons
+                            </li>
+                        </a>
+                        
+                        <a href="#">
+                            <li class="icon-text-container">
+                                <i class="fa-solid fa-circle-info sidebar-icon"></i>
+                                Help
+                            </li>
+                        </a>
                     </ul>
-                </td>
-                <!--- Course Navigation Sidebar-->
-                <td align="left" valign="top">
-                    <ul>
-                        <li><a href="home_courses_home.html">Home</a></li>
-                        <li><a href="#">Modules</a></li>
-                        <li><a href="#">Piazza</a></li>
-                        <li><a href="#">Zoom Meetings</a></li>
-                        <li><a href="assignments/index.html">Assignments</a></li>
-                        <li><a href="#">Quizzes</a></li>
-                        <li><a href="grades.html">Grades</a></li>
-                        <li><a href="#">People</a></li>
-                        <li><a href="#">Panopto Video</a></li>
-                        <li><a href="#">Discussions</a></li>
-                        <li><a href="#">Announcements</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li><a href="#">Files</a></li>
-                        <li><a href="#">Rubrics</a></li>
-                        <li><a href="#">Outcomes</a></li>
-                        <li><a href="#">Collaborations</a></li>
-                        <li><a href="#">Syllabus</a></li>
-                        <li><a href="#">Settings</a></li>
-                    </ul>
-                </td>
-                <!-- Grades Screen-->
-                <td valign="top">
-                    <!--Top row of buttons-->
-                    <select>
-                        <option value="GRADEBOOK">Gradebook</option>
-                        <option value="BRADEGOOK">Bradegook</option>
-                    </select>
-                    <button type="button">Import</button>
-                    <select>
-                        <option value="EXPORT">Export</option>
-                        <option value="TROPXE">Tropxe</option>
-                    </select>
-                    <button type="button">Configure</button>
-
-                    <h3>Student Names</h3>
-                    <input id="search-bar-students" placeholder="Search Students"><br>
-                    <h3>Assignment Names</h3>
-                    <input id="search-bar-assignments" placeholder="Search Assignments"><br><br>
-                    <button type="button">Apply Filters</button>
-                    <br><br>
-
-                    <!--Grade table-->
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Student Name</th>
-                                <th align="center">A1 SETUP (Out of 100)</th>
-                                <th align="center">A2 HTML (Out of 100)</th>
-                                <th align="center">A3 CSS (Out of 100)</th>
-                                <th align="center">A4 BOOTSTRAP (Out of 100)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Joe Zawinul</td>
-                                <td align="center">45</td>
-                                <td align="center">26</td>
-                                <td align="center">99</td>
-                                <td align="center"><input type="text" value="13"></input></td>
-                            </tr>
-                            <tr>
-                                <td>Wayne Shorter</td>
-                                <td align="center">23</td>
-                                <td align="center"><input type="text" value="34"></input></td>
-                                <td align="center">11</td>
-                                <td align="center">43</td>
-                            </tr>
-                            <tr>
-                                <td>Jaco Pastorius</td>
-                                <td align="center">93</td>
-                                <td align="center">13</td>
-                                <td align="center">54</td>
-                                <td align="center">64</td>
-                            </tr>
-                            <tr>
-                                <td>Alex Acuña</td>
-                                <td align="center">22</td>
-                                <td align="center">100</td>
-                                <td align="center">40</td>
-                                <td align="center"><input type="text" value="99"></input></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                </div>
+                <!-- container for account nav and profile content -->
+                <div class="course-header-content-container">
                     
+                    <div class="header-container d-none d-md-block">
 
-                </td>
-            </tr>
-        </table>
+                        <i class="fa-solid fa-bars bars-icon"></i>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="../course_home.html" class="red-link no-text-decoration">CS4550.126.31.202410</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Grades</li>
+                            </ol> 
+                        </nav>
+                        <!-- <button class="btn btn-outline-secondary float-end student-view-button"><i class="fa-solid fa-glasses" style="margin-right: 5px;"></i>Student View</button> -->
+                    </div>
+                    <hr class="d-none d-md-block">
+
+                    <!-- HEADER THAT SHOWS UP ON SMALLER SCREENS -->
+                    <div class="navbar bg-dark d-md-none mb-2 small-screen-dark-header">
+                        <div class="dropdown">
+                            <!-- Trigger -->
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                    
+                            <!-- Dropdown Menu -->
+                            <div class="dropdown-menu" aria-labelledby="menuDropdown">                    
+                                <a class="dropdown-item" href="home_account.html">
+                                    <i class="fa-regular fa-user account-icon"></i> Account
+                                </a>
+                                
+                                <a class="dropdown-item" href="dashboard.html">
+                                    <i class="fa-solid fa-gauge"></i> Dashboard
+                                </a>
+                                
+                                <a class="dropdown-item" href="course_home.html">
+                                    <i class="fa-solid fa-book"></i> Courses
+                                </a>
+                    
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa-solid fa-calendar"></i> Calendar
+                                </a>
+                                
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa-solid fa-inbox"></i> Inbox
+                                </a>
+                    
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa-solid fa-clock"></i> History
+                                </a>
+                    
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa-solid fa-video"></i> Studio
+                                </a>
+                    
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa-solid fa-c"></i> Commons
+                                </a>
+                    
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa-solid fa-circle-info"></i> Help
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <span style="color: white; font-size: small;">CS4550.12631.202410 Modules</span>
+                        
+                        <div class="dropdown">
+                            <!-- Trigger for chevron-down icon -->
+                            <div class="btn-group">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="menu2Dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-chevron-down" style="color: white;"></i>
+                                </button>
+                                <!-- Dropdown Menu for chevron-down icon -->
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="menu2Dropdown">
+                                    
+                                    <ul class="list-unstyled" style="margin: 20px; width: 100%; padding-right: 40px;">
+                                        <li class="non-selected-list-item w-100"><a href="../course_home.html">Home</a></li>
+                                        <li class="non-selected-list-item w-100"><a href="">Modules</a></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">Piazza</a></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">Zoom Meetings</a></li>
+                                        <li class="non-selected-list-item w-100"><a href="index.html">Assignments</a></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">Quizzes</a></li>
+                                        <li class="selected-list-item w-100"><a href="grades.html">Grades</a></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">People</a></li>
+                                        <li class="non-selected-list-item w-100" ><a href="#">Panopto Video</a></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">Discussions</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">Announcements</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">Pages</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">Files</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">Rubrics</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">Outcomes</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">Collaborations</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                        <li class="non-selected-list-item w-100"><a href="#">Syllabus</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                        <li class="non-selected-list-item w-100" ><a href="#">Progress Reports</a></li>
+                                        <li class="non-selected-list-item w-100" ><a href="#">Settings</a></li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                          
+                    
+                    <div class="profile-content-container">
+                        <div class="account-nav-sidebar d-none d-md-block">
+                            <ul class="list-unstyled">
+                                <li class="non-selected-list-item courses-nav-sidebar-header">202410_1 Fall 2023 Semester</li>
+                                <li class="non-selected-list-item"><a href="../course_home.html">Home</a></li>
+                                <li class="non-selected-list-item"><a href="">Modules</a></li>
+                                <li class="non-selected-list-item"><a href="#">Piazza</a></li>
+                                <li class="non-selected-list-item"><a href="#">Zoom Meetings</a></li>
+                                <li class="non-selected-list-item"><a href="index.html">Assignments</a></li>
+                                <li class="non-selected-list-item"><a href="#">Quizzes</a></li>
+                                <li class="selected-list-item"><a href="grades.html">Grades</a></li>
+                                <li class="non-selected-list-item"><a href="#">People</a></li>
+                                <li class="non-selected-list-item" ><a href="#">Panopto Video</a></li>
+                                <li class="non-selected-list-item"><a href="#">Discussions</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                <li class="non-selected-list-item"><a href="#">Announcements</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                <li class="non-selected-list-item"><a href="#">Pages</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                <li class="non-selected-list-item"><a href="#">Files</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                <li class="non-selected-list-item"><a href="#">Rubrics</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                <li class="non-selected-list-item"><a href="#">Outcomes</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                <li class="non-selected-list-item"><a href="#">Collaborations</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                <li class="non-selected-list-item"><a href="#">Syllabus</a><i class="fa-regular fa-eye-slash float-end" style="margin-left: 5px; margin-top: 5px;"></i></li>
+                                <li class="non-selected-list-item" ><a href="#">Progress Reports</a></li>
+                                <li class="non-selected-list-item" ><a href="#">Settings</a></li>
+                            </ul>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">                 
+                                <div class="course-module-content col-12">
+                                    <div class="button-area d-flex align-items-center justify-content-end">  
+                                        <!-- Import Button -->                                      
+                                        <button type="button" class="btn btn-secondary me-2">
+                                            <i class="fa-solid fa-file-import"></i> Import
+                                        </button>
+                                    
+                                        <!-- Export Button -->
+                                        <button type="button" class="btn btn-secondary me-2">
+                                            <i class="fa-solid fa-file-export"></i> Export
+                                        </button>
+                                    
+                                        <!-- Settings Button -->
+                                        <button type="button" class="btn btn-secondary me-2">
+                                            <i class="fa-solid fa-cog"></i>
+                                        </button>
+                                    
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <!-- Student Names -->
+                                        <!-- Student Names -->
+                                        <div class="col-md-6">
+                                            <label for="studentNames">Student Names</label>
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-search"></i>
+                                                </span>
+                                                <input type="text" class="form-control" id="studentNames" placeholder="Search for a student" aria-label="Search for a student" aria-describedby="studentDropdown">
+                                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="studentDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Assignment Names -->
+                                        <div class="col-md-6">
+                                            <label for="assignmentNames">Assignment Names</label>
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-search"></i>
+                                                </span>
+                                                <input type="text" class="form-control" id="assignmentNames" placeholder="Search Assignments" aria-label="Search for an assignment" aria-describedby="assignmentDropdown">
+                                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="assignmentDropdown" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <button class="btn btn-outline-secondary">
+                                                <i class="fa-solid fa-filter"></i>
+                                                Apply Filters
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+                                    <table class="table table-striped table-bordered mt-3">
+                                        <tbody>
+                                            <tr>
+                                                <td class><strong>Student Name</strong></td>
+                                                <td>
+                                                    <span class="assignment-name">A1 SETUP</span>
+                                                    <span class="out-of">Out of 100</span>
+                                                </td>
+                                                <td>
+                                                    <span class="assignment-name">A2 HTML</span>
+                                                    <span class="out-of">Out of 100</span>
+                                                </td>
+                                                <td>
+                                                    <span class="assignment-name">A3 CSS</span>
+                                                    <span class="out-of">Out of 100</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="name-color">Doxa Asibey</td>
+                                                <td class="center-percentage d-flex justify-content-center">
+                                                    <input type="text" class="form-control form-control-sm" value="100%" style="width: 20%; text-align: center;">
+                                                </td>
+                                                <td class="center-percentage">100%</td>
+                                                <td class="center-percentage">100%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="name-color">Thuy Tien Bui</td>
+                                                <td class="center-percentage">100%</td>
+                                                <td class="center-percentage">100%</td>
+                                                <td class="center-percentage">100%</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="name-color">Yetong Chen</td>
+                                                <td class="center-percentage">100%</td>
+                                                <td class="center-percentage">100%</td>
+                                                <td class="center-percentage">100%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                    
+
+
+                                                                                         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 
 </html>
