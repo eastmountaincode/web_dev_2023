@@ -392,22 +392,14 @@ html, body {
     text-align: center;
 }
 
+/* DASHBOARD */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* makes the entire card area clickable */
+}
+.card-link:hover .dashboard-course-card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
