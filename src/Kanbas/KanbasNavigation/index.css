@@ -33,9 +33,8 @@
 }
 
 .main-nav-sidebar {
-    height: 100%;
+    height: 100vh;
     background-color: black;
-    display: flex;
 }
 
 .kanbas-container .main-nav-sidebar{

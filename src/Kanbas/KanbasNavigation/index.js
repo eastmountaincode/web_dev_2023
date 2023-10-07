@@ -15,7 +15,7 @@ function KanbasNavigation() {
     };
     const { pathname } = useLocation();
     return (
-        <div className="list-group main-nav-sidebar" style={{ width: '85px' }}>
+        <div className="list-group main-nav-sidebar vh-100" style={{ width: '85px' }}>
             <ul className="sidebar-element-logo">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2V8BuW7n0uy8uY8krUGiY5bXk0LN8RZe4cw&usqp=CAU" alt="northeastern logo"></img>
             </ul>

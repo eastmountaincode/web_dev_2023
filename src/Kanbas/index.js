@@ -5,7 +5,7 @@ import Dashboard from "./Dashboard";
 
 function Kanbas() {
     return (
-      <div className="d-flex kanbas-container">
+      <div className="kanbas-container">
         <div className="kanbas-nav-container">
           <KanbasNavigation />
         </div>

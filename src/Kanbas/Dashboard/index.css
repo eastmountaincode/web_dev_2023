@@ -1,26 +1,27 @@
-.dashboard-header {
+/* .dashboard-header {
     width: 100%;
     color: rgb(107, 104, 104);
-}
+} */
+
 .inner-dashboard-content {
     margin-left: 16px;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
+    /* flex: 1; */
+    background-color: red;
 }
 
 .dashboard-course-card {
     min-width: 260px;
     max-width: 260px;
-    margin: 15px;
-    
 }
 .card-container {
-    max-width: 1160px;
-    margin-left: -15px;
+    /* max-width: 1160px;
+    margin-left: -15px; */
     display: flex;
     flex-wrap: wrap;
-
-    background-color: red;
+    gap: 15px;
+    height: 50%;
 }
 
 .dashboard-container {
@@ -28,3 +29,12 @@
     display: flex;
     flex-direction: column;
 }
+
+.card-link {
+    text-decoration: none;
+}
+
+.card-link .card-title {
+    color: rgb(43, 112, 215);
+}
+
