@@ -1,3 +1,18 @@
 .kanbas-container {
     height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: blue;
+}
+
+.kanbas-container .kanbas-inner-content{
+    display: flex;
+    flex: 1;
+    margin: 16px 24px;
+    
+}
+
+.kanbas-nav-container {
+    display: flex;
+    height: 100%;
 }

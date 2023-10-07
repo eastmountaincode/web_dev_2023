@@ -24,13 +24,36 @@
 
 .kanbas-container .list-group .main-nav-sidebar-element.active {
     margin: 0;
+    background-color: white;
+    color:rgb(200, 16, 46);
+}
+
+.kanbas-container .list-group .main-nav-sidebar-element.active .icon-wrapper {
+    color:rgb(200, 16, 46);
 }
 
 .main-nav-sidebar {
     height: 100%;
     background-color: black;
+    display: flex;
 }
 
 .kanbas-container .main-nav-sidebar{
     border-radius: 0;
 }
+
+.icon-wrapper {
+    margin-bottom: 1px;
+    margin-top: 4px;
+    color: rgb(200, 16, 46);
+}
+
+.account-icon {
+    color: white;
+}
+
+.kanbas-container .list-group .main-nav-sidebar-element.active .icon-wrapper .account-icon {
+    color:rgb(163, 163, 163);
+}
+
+
