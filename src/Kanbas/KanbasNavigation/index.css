@@ -1,44 +1,22 @@
-.sidebar-element-logo {
-    margin: 0;
-    padding: 0;
-    list-style-type: none; /* remove the default bullet points of ul */
-
-}
-.sidebar-element-logo img {
-    width: 85px;
+.main-nav-sidebar {
+    background-color: black;
 }
 
 .list-group .main-nav-sidebar-element {
     font-size: 0.74em;
     background-color: black;
     color: white;
-    margin: 0;
     border: 0;
-    text-align: center;
-    padding: 8px 0px;
 }
 
-.list-group .list-group-item.main-nav-sidebar-element {
-    border-radius: 0;
-}
-
-.kanbas-container .list-group .main-nav-sidebar-element.active {
+.list-group .main-nav-sidebar-element.active {
     margin: 0;
     background-color: white;
     color:rgb(200, 16, 46);
 }
 
-.kanbas-container .list-group .main-nav-sidebar-element.active .icon-wrapper {
+.list-group .main-nav-sidebar-element.active .icon-wrapper {
     color:rgb(200, 16, 46);
-}
-
-.main-nav-sidebar {
-    height: 100vh;
-    background-color: black;
-}
-
-.kanbas-container .main-nav-sidebar{
-    border-radius: 0;
 }
 
 .icon-wrapper {
@@ -51,8 +29,9 @@
     color: white;
 }
 
-.kanbas-container .list-group .main-nav-sidebar-element.active .icon-wrapper .account-icon {
+.list-group .main-nav-sidebar-element.active .icon-wrapper .account-icon {
     color:rgb(163, 163, 163);
 }
+
 
 

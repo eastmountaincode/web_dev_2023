@@ -15,12 +15,11 @@ code {
 html, body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  /* background-color: aqua; */
+  height: 100%;
 }
 
-#root {
+/* #root {
   height: 100vh;
-}
+} */
 
 

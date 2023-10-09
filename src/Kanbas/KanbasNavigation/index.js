@@ -15,15 +15,15 @@ function KanbasNavigation() {
     };
     const { pathname } = useLocation();
     return (
-        <div className="list-group main-nav-sidebar vh-100" style={{ width: '85px' }}>
-            <ul className="sidebar-element-logo">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2V8BuW7n0uy8uY8krUGiY5bXk0LN8RZe4cw&usqp=CAU" alt="northeastern logo"></img>
+        <div className="list-group main-nav-sidebar vh-100 m-0 p-0 rounded-0 w-100">
+            <ul className="sidebar-element-logo list-unstyled m-0 p-0">
+                <img className="w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2V8BuW7n0uy8uY8krUGiY5bXk0LN8RZe4cw&usqp=CAU" alt="northeastern logo"></img>
             </ul>
             {links.map((link, index) => (
                 <Link
                     key={index}
                     to={`/Kanbas/${link}`}
-                    className={`list-group-item main-nav-sidebar-element ${pathname.includes(link) && "active"}`}>
+                    className={`d-flex flex-column align-items-center justify-content-center list-group-item main-nav-sidebar-element m-0 pt-8 ${pathname.includes(link) && "active"}`}>
                     <div className="icon-wrapper">
                         {link === "Account" ? (
                             <FontAwesomeIcon icon={linkIcons[link]} className="account-icon" size="2x"/>

@@ -1,29 +1,10 @@
-.kanbas-container {
-    /* background-color: red; */
-    height: 100%;
-    display: flex;
-    margin: 0;
-    padding: 0;
-
-}
-
-/* .kanbas-container > div {
-    align-self: stretch;
-} */
-
-
 .kanbas-nav-container {
+    position: fixed;
+    width: 85px;
     height: 100%;
-    /* background-color: red; */
+    background-color: black;
 }
 
-.kanbas-inner-content {
-    flex-grow: 1;
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    /* flex: 1; */
-    padding-left: 24px;
-    padding-top: 16px;
-    padding-right: 24px
-} 
+.kanbas-main-content {
+    margin-left: 85px;
+}
