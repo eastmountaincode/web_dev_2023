@@ -22,7 +22,7 @@ function Kanbas() {
           <Route path="/" element={<Navigate to="Dashboard" />} />
           <Route path="Dashboard" element={<Dashboard />} />
           <Route path="Account" element={<Account />} />
-          <Route path="Courses" element={<Courses />} />
+          <Route path="Courses/:courseId/*" element={<Courses />} />
         </Routes>
       </div>
       
@@ -30,4 +30,4 @@ function Kanbas() {
   );
 }
 
-  export default Kanbas;
+export default Kanbas;

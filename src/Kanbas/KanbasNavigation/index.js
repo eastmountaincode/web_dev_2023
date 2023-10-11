@@ -14,6 +14,9 @@ function KanbasNavigation() {
         Calendar: faCalendar
     };
     const { pathname } = useLocation();
+
+    const defaultCourseID = "RS104";
+
     return (
         <div className="list-group main-nav-sidebar vh-100 m-0 p-0 rounded-0 w-100">
             <ul className="sidebar-element-logo list-unstyled m-0 p-0">
@@ -22,7 +25,7 @@ function KanbasNavigation() {
             {links.map((link, index) => (
                 <Link
                     key={index}
-                    to={`/Kanbas/${link}`}
+                    to={`/Kanbas/${link}${link === "Courses" ? `/${defaultCourseID}` : ""}`}
                     className={`d-flex flex-column align-items-center justify-content-center list-group-item main-nav-sidebar-element m-0 pt-8 ${pathname.includes(link) && "active"}`}>
                     <div className="icon-wrapper">
                         {link === "Account" ? (
