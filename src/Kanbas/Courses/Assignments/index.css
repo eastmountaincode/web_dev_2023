@@ -1,0 +1,19 @@
+.rounded-rectangle {
+    display: inline-block; 
+    padding: 4px 8px; 
+    border-radius: 25px; 
+    border: 1px solid #aaa;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.assignment_search_input {
+    display: block;
+    width: 40%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    
+}

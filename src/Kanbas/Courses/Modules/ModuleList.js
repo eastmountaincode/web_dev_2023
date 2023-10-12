@@ -12,8 +12,9 @@ function ModuleList() {
     const modules = db.modules.filter((module) => module.course === courseId);
 
     return (
-        <div className="container-fluid" style={{overflow: "hidden"}}>       
-            <div className="row">
+        <div className="container-fluid">     
+            {/* BUTTON AREA   */}
+            <div className="row ps-3 pe-3">
                 <div className="button-area mb-2">
                     <button type="button" className="btn btn-secondary btn-xx btn-sm float-end ms-2">Collapse All</button>
                     <button type="button" className="btn btn-secondary btn-xx btn-sm float-end ms-2">View Progress</button>
@@ -30,7 +31,8 @@ function ModuleList() {
                 </div>
                 <hr></hr>
             </div>
-            <div className="row">
+            {/* CONTENT AREA */}
+            <div className="row ps-3 pe-3">
                 <div className="list-group" style={{padding: "0"}}>
                     {modules.map((module, index) => (
                         <span key={index} className="list-group-item list-group-item-secondary d-flex align-items-center" style={{padding: "15px 10px"}}>

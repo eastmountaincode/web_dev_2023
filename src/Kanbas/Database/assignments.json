@@ -12,6 +12,6 @@
     { "_id": "A402", "title": "Some other assignment", "course": "RS104" },
     { "_id": "A403", "title": "Yet another assignment", "course": "RS104" },
     { "_id": "A501", "title": "Bat Identification", "course": "RS105" },
-    { "_id": "A502", "title": "Stelth Practice", "course": "RS105" },
+    { "_id": "A502", "title": "Stealth Practice", "course": "RS105" },
     { "_id": "A503", "title": "Bat Tracking", "course": "RS105" }
 ]

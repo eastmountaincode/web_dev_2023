@@ -10,11 +10,11 @@ import CourseStatus from "./CourseStatus";
 function Home() {
     return (
         <div className="container-fluid" style={{padding: "0"}}>
-            <div className="row">
-                <div className="col-9" style={{padding: "0", margin: "0"}}>
+            <div className="row" style={{padding: "0"}}>
+                <div className="col-lg-9 col-12 ps-3 pe-3" style={{padding: "0", margin: "0"}}>
                     <ModuleList />
                 </div>
-                <div className="col-3" style={{padding: "0", margin: "0"}}>
+                <div className="col-3 d-none d-lg-block" style={{padding: "0", margin: "0"}}>
                     <CourseStatus />
                 </div>
             </div>

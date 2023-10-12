@@ -8,6 +8,11 @@ import { Link } from "react-router-dom";
 import Modules from "./Modules";
 import Home from "./Home"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Assignments from "./Assignments";
+import AssignmentEditor from "./Assignments/AssignmentEditor";
+import Grades from "./Grades";
+import CourseSettings from "./CourseSettings"
+import CoursesHeader from "./CoursesHeader";
 
 
 
@@ -18,45 +23,29 @@ function Courses() {
     const location = useLocation();
     const currentPage = decodeURIComponent(location.pathname.split("/").pop()) || "Home";
     return (
-        <div className="container-fluid" style={{overflow: "hidden"}}>
-            <div className="row">
-                <div style={{padding: "0", paddingTop: "5px", paddingBottom: "6px"}}>
-                    <div className="d-flex float-start">
-                        <div style={{padding: "0", marginRight: "20px"}}>
-                            <FaBars size={22} style={{color: "rgb(183, 44, 44)", transform: "scaleX(1.2)"}}/>
-                        </div>
-                        <nav aria-label="breadcrumb" style={{paddingTop: "1px"}}>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <Link to={`/Kanbas/Courses/${courseId}/Home`} className="red-link no-text-decoration">{course.name}.{courseId}</Link>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">{currentPage}</li>
-                            </ol> 
-                        </nav>
-                    </div>
-                    <button class="btn btn-outline-secondary float-end student-view-button" style={{marginTop: "-5px"}}><FaGlasses style={{marginRight: "5px",}}/>Student View</button>
-                </div>
-                <hr></hr>
+        <div className="container-fluid" style={{paddingTop: "0"}}>
+            <div className="">
+                <CoursesHeader/>
             </div>
             <div className="row">
                 <div className="d-flex">
-                    <div style={{minWidth: "200px"}}>
+                    <div className="d-none d-md-block" style={{minWidth: "200px"}}>
                         <CourseNavigation />
                     </div>
-                    <div className="ps-3 w-100">
+                    <div className="w-100">
                         <Routes>
                             <Route path="/" element={<Navigate to="Home" />} />
                             <Route path="Home" element={<Home />} />
                             <Route path="Modules" element={<Modules />} />
                             <Route path="Piazza" element={<h1>Piazza</h1>} />
                             <Route path="Zoom Meetings" element={<h1>Zoom Meetings</h1>} />
-                            <Route path="Assignments" element={<h1>Assignments</h1>} />
+                            <Route path="Assignments" element={<Assignments />} />
                             <Route
                                 path="Assignments/:assignmentId"
-                                element={<h1>Assignment Editor</h1>}
+                                element={<AssignmentEditor />}
                             />
                             <Route path="Quizzes" element={<h1>Quizzes</h1>} />
-                            <Route path="Grades" element={<h1>Grades</h1>} />
+                            <Route path="Grades" element={<Grades />} />
                             <Route path="People" element={<h1>People</h1>} />
                             <Route path="Panopto Video" element={<h1>Panopto Video</h1>} />
                             <Route path="Discussions" element={<h1>Discussions</h1>} />
@@ -68,7 +57,7 @@ function Courses() {
                             <Route path="Collaborations" element={<h1>Collaborations</h1>} />
                             <Route path="Syllabus" element={<h1>Syllabus</h1>} />
                             <Route path="Progress Reports" element={<h1>Progress Reports</h1>} />
-                            <Route path="Settings" element={<h1>Settings</h1>} />
+                            <Route path="Settings" element={<CourseSettings />} />
                         </Routes>
                     </div>
                 </div>
