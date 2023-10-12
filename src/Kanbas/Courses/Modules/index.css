@@ -1,0 +1,29 @@
+.gray-color {
+    color: gray;
+}
+
+.button-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+.button-area .form-select {
+    width: auto;
+    max-width: 100%; 
+}
+
+.button-area .btn-xx {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.no-wrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

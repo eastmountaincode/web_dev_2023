@@ -1,0 +1,23 @@
+.container-fluid {
+    padding: 0;
+    padding-top: 15px
+}
+.row {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.row .d-flex {
+    padding: 0;
+}
+.row h2 {
+    padding: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #6c757d; 
+}
+.course-content {
+    display: flex;
+    flex: 1;
+}

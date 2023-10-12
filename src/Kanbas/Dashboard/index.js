@@ -8,7 +8,7 @@ function Dashboard() {
   return (
     <div className="dashboard-container ps-4 pe-4 pt-3">
       <div className="dashboard-header">
-        <h1 className="header-text display-6" style={{"margin-bottom": "-3px"}}>Dashboard</h1>
+        <h1 className="header-text display-6" style={{"marginBottom": "-3px"}}>Dashboard</h1>
         <hr></hr>
       </div>
       <div className="inner-dashboard-content ps-4 pt-1">

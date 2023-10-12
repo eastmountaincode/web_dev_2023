@@ -1,0 +1,30 @@
+.selected {
+    color: black;
+    margin-bottom: 13px;
+    border-left: 2px solid black;
+    margin-left: -5px;
+    padding-left: 3px;
+}
+
+.non-selected{
+    color: rgb(183, 44, 44);
+}
+
+.non-selected {
+    margin-bottom: 13px;
+}
+
+.non-selected:hover, .selected:hover{
+    opacity: 0.8;
+}
+
+.selected, .non-selected {
+    font-weight: 500;
+}
+
+.red-link {
+    color: rgb(183, 44, 44);
+}
+.no-text-decoration {
+    text-decoration: none;
+}
