@@ -4,6 +4,8 @@ import HelloWorld from './Labs/a3/HelloWorld';
 import Kanbas from './Kanbas'
 import { BrowserRouter, Navigate, Link} from 'react-router-dom';
 import {Routes, Route} from 'react-router';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
     <BrowserRouter>
       
       <Routes>
-        <Route path="/" element={ <Navigate to="/Labs/a3"/>}/>
+        <Route path="/" element={ <Navigate to="/Labs/a4"/>}/>
         <Route path="/hello" element = {<HelloWorld />}/>
         <Route path="/Labs/*" element = {<Labs />}/>
         <Route path="/kanbas/*" element = {<Kanbas />}/>
