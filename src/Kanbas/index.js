@@ -50,7 +50,7 @@ function Kanbas() {
 
     const addNewCourse = () => {
         const newCourseId = new Date().getTime().toString();
-        console.log("New course ID:", newCourseId);
+        //console.log("New course ID:", newCourseId);
         // the existing courses...
         setCourses([...courses,
             // ...plus the new course with time as id

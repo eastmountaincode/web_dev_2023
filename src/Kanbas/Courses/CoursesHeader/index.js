@@ -16,9 +16,9 @@ function CoursesHeader({ courses }) {
 
     const [isScreenWidthMdOrLarger, setIsScreenWidthMdOrLarger] = useState(window.innerWidth >= 768);
 
-    console.log("Courses passed to CoursesHeader: ", courses);
-    console.log("Current courseId: ", courseId);
-    console.log("Found course: ", course);
+    // console.log("Courses passed to CoursesHeader: ", courses);
+    // console.log("Current courseId: ", courseId);
+    // console.log("Found course: ", course);
 
     useEffect(() => {
         const handleResize = () => {
