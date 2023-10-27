@@ -1,7 +1,6 @@
-import { Navigate, Route, Routes, useParams } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation"
 import './index.css'
-import { useLocation } from "react-router-dom";
 import Modules from "./Modules";
 import Home from "./Home"
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,16 +13,16 @@ import CoursesHeader from "./CoursesHeader";
 
 
 
-function Courses( {courses}) {
-    const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId)
+function Courses( {courses} ) {
+    //const { courseId } = useParams();
+    //const course = courses.find((course) => course._id === courseId)
     
-    const location = useLocation();
-    const currentPage = decodeURIComponent(location.pathname.split("/").pop()) || "Home";
+    //const location = useLocation();
+    //const currentPage = decodeURIComponent(location.pathname.split("/").pop()) || "Home";
     return (
         <div className="container-fluid" style={{paddingTop: "0"}}>
             <div className="">
-                <CoursesHeader/>
+                <CoursesHeader courses={courses}/>
             </div>
             <div className="row">
                 <div className="d-flex">

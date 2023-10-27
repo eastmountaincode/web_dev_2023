@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaBars, FaGlasses } from 'react-icons/fa';
 import { useLocation, useParams } from "react-router-dom";
-import db from "../../../Kanbas/Database";
 import { useState, useEffect } from "react";
 import { Dropdown } from 'react-bootstrap';
 import Dashboard from "../../Dashboard"
@@ -9,13 +8,17 @@ import CourseNavigation from "../CourseNavigation";
 import "./index.css"
 
 
-function CoursesHeader() {
+function CoursesHeader({ courses }) {
     const { courseId } = useParams();
-    const course = db.courses.find((course) => course._id === courseId);
+    const course = courses.find((course) => course._id === courseId);
     const location = useLocation();
     const currentPage = decodeURIComponent(location.pathname.split("/").pop()) || "Home";
 
     const [isScreenWidthMdOrLarger, setIsScreenWidthMdOrLarger] = useState(window.innerWidth >= 768);
+
+    console.log("Courses passed to CoursesHeader: ", courses);
+    console.log("Current courseId: ", courseId);
+    console.log("Found course: ", course);
 
     useEffect(() => {
         const handleResize = () => {

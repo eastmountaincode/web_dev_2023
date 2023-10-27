@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Dashboard({ courses, course, setCourse, addNewCourse, deleteCourse, updateCourse}) {
 
-
   return (
     <div className="dashboard-container ps-4 pe-4 pt-3">
       <div className="dashboard-header">
@@ -61,7 +60,7 @@ function Dashboard({ courses, course, setCourse, addNewCourse, deleteCourse, upd
           <div key={course._id} className="">
             <div className="card dashboard-course-card">
               <Link to={`/Kanbas/Courses/${course._id}`} className="card-link">
-                <img src="https://media.istockphoto.com/id/1309453432/video/abstract-corporate-blue-motion-background-seamless-looping.jpg?s=640x640&k=20&c=U0O8Zx3QvIQ4Pqm4zFIfuN1ZVScpL9FHF32DCTpqBDY=" alt="generic course image" style={{width: "260px"}}/>
+                <img src="https://media.istockphoto.com/id/1309453432/video/abstract-corporate-blue-motion-background-seamless-looping.jpg?s=640x640&k=20&c=U0O8Zx3QvIQ4Pqm4zFIfuN1ZVScpL9FHF32DCTpqBDY=" alt="generic course background pic" style={{width: "260px"}}/>
                 <div className="card-body">
                   <h5 className="card-title">{course.name}</h5>
                   <p className="card-text">{course.number}</p>
