@@ -1,10 +1,7 @@
-import db from "../../Kanbas/Database";
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation"
 import './index.css'
-import { FaBars, FaGlasses } from 'react-icons/fa';
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
 import Modules from "./Modules";
 import Home from "./Home"
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,9 +14,10 @@ import CoursesHeader from "./CoursesHeader";
 
 
 
-function Courses() {
+function Courses( {courses}) {
     const { courseId } = useParams();
-    const course = db.courses.find((course) => course._id === courseId);
+    const course = courses.find((course) => course._id === courseId)
+    
     const location = useLocation();
     const currentPage = decodeURIComponent(location.pathname.split("/").pop()) || "Home";
     return (

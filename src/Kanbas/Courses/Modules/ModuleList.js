@@ -1,20 +1,32 @@
-import React from "react";
+import {React, useState} from "react";
 import { useParams } from "react-router-dom";
 import db from "../../Database";
+
 import { FaGripVertical, FaEllipsisV, FaPlus } from 'react-icons/fa';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css"
 
+import { useDispatch, useSelector } from "react-redux";
+import {
+    addModule,
+    deleteModule,
+    updateModule,
+    setModule
+} from "./modulesReducer"
+
 function ModuleList() {
     const { courseId } = useParams();
-    const modules = db.modules.filter((module) => module.course === courseId);
+
+    const modules = useSelector((state) => state.modulesReducer.modules);
+    const module = useSelector((state) => state.modulesReducer.module);
+    const dispatch = useDispatch();
+
 
     return (
         <div className="container-fluid">     
             {/* BUTTON AREA   */}
-            <div className="row ps-3 pe-3">
+            <div className="row ps-4 pe-3">
                 <div className="button-area mb-2">
                     <button type="button" className="btn btn-secondary btn-xx btn-sm float-end ms-2">Collapse All</button>
                     <button type="button" className="btn btn-secondary btn-xx btn-sm float-end ms-2">View Progress</button>
@@ -31,26 +43,55 @@ function ModuleList() {
                 </div>
                 <hr></hr>
             </div>
+            {/* UPDATE ADD BUTTON AREA */}
+            
+            <div className="mb-3 p-3 me-1 border" style={{marginLeft: "12px"}}>
+                <label htmlFor="moduleName" className="form-label mb-1">Module Name</label>
+                <input 
+                    type="text"
+                    className="form-control"
+                    id="moduleName"
+                    value={module.name}
+                    onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))}
+                />
+                <label htmlFor="moduleDescription" className="form-label mt-2 mb-1">Description</label>
+                <textarea 
+                    className="form-control"
+                    id="moduleDescription"
+                    rows="3"
+                    value={module.description}
+                    onChange={(e) => dispatch(setModule({ ...module, description: e.target.value }))}
+                />
+                <div style={{display: "flex", flexDirection: "column", alignItems:"flex-start"}}>
+                    <button className="btn btn-success mt-3" onClick={() => dispatch(addModule({...module, course: courseId }))}>Add</button>
+                    <button className="btn btn-info mt-2" style={{color: "white"}} onClick={() => dispatch(updateModule(module))}>Update</button>
+                </div>
+            </div>
+
+
             {/* CONTENT AREA */}
-            <div className="row ps-3 pe-3">
+            <div className="row ps-4 pe-3">
                 <div className="list-group" style={{padding: "0"}}>
-                    {modules.map((module, index) => (
-                        <span key={index} className="list-group-item list-group-item-secondary d-flex align-items-center" style={{padding: "15px 10px"}}>
-                            
-                            <FaGripVertical className="me-1 gray-color" />
-                            <span className="no-wrap">{module.name}</span>
-                            <span className="ms-auto no-wrap">
-                                <FontAwesomeIcon className="ms-3" icon={faCheckCircle} style={{color: "green"}} />
-
-
-                                <FaPlus className="ms-3 gray-color" style={{marginTop: '-3px'}} />
-                                <FaEllipsisV className="ms-2 gray-color" style={{marginTop: '-2px'}} />
-                            </span>
-                            
-                        </span>
+                    {modules
+                        .filter((module) => module.course === courseId)
+                        .map((module, index) => (
+                        <div key={index} className="list-group-item list-group-item-secondary d-flex align-items-center justify-content-between" style={{padding: "15px 10px"}}>
+                            <div className="d-flex align-items-center">
+                                <FaGripVertical className="me-1 gray-color" />
+                                <div className="ms-2" style={{display: "flex", flexDirection: "column"}}>
+                                    <span className="h6 mb-1">{module.name}</span>
+                                    <span className="text-muted">{module.description}</span>
+                                </div>
+                            </div>
+                            <div className="d-flex ms-2">
+                                <button className="btn btn-outline-secondary" onClick={() => dispatch(setModule(module))}>Edit</button>
+                                <button className="btn btn-outline-danger ms-1" onClick={() => dispatch(deleteModule(module._id))}>Delete</button>
+                            </div>
+                        </div>
                     ))} 
                 </div>
-            </div>      
+            </div>
+    
         </div>
     ); 
 }
