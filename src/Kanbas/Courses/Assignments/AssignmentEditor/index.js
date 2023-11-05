@@ -11,7 +11,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { 
     addAssignment,
     selectAssignment,
-    deleteAssignment,
     updateAssignment,
     setAssignment
     
@@ -60,6 +59,7 @@ function AssignmentEditor() {
         // After saving, navigate back to the list of assignments
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
+    
     
     return (
         <div className="container-fluid">
