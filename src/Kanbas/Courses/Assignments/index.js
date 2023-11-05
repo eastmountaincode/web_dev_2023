@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import db from "../../Database";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaGripVertical, FaChevronDown, FaPlus, FaEllipsisV, FaPenToSquare, FaCheckSquare } from 'react-icons/fa';
+import { FaGripVertical, FaChevronDown, FaPlus, FaEllipsisV } from 'react-icons/fa';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import "./index.css"

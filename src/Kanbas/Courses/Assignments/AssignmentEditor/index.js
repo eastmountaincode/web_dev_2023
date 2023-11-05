@@ -1,10 +1,9 @@
 import React, {useEffect} from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import db from "../../../Database";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsis, faEllipsisV, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { faCircleCheck, faSquare, faSquareCheck } from "@fortawesome/free-regular-svg-icons";
+import { faEllipsisV, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faCircleCheck, } from "@fortawesome/free-regular-svg-icons";
 import { Typeahead } from "react-bootstrap-typeahead";
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import { useSelector, useDispatch } from "react-redux";
@@ -41,7 +40,7 @@ function AssignmentEditor() {
                 dispatch(selectAssignment(foundAssignment));
             }
         }
-    }, [assignmentId, dispatch, assignments]);
+    }, [assignmentId, courseId, dispatch, assignments]);
 
     const assignment = useSelector((state) => state.assignmentsReducer.assignment);
 
