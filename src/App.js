@@ -1,8 +1,8 @@
 import './App.css';
-import Labs from "./Labs"
-import HelloWorld from './Labs/a3/HelloWorld';
-import Kanbas from './Kanbas'
-import { BrowserRouter, Navigate, Link} from 'react-router-dom';
+import Labs from './Labs/index.js';
+import HelloWorld from './Labs/a3/HelloWorld.js';
+import Kanbas from './Kanbas/index.js'
+import { BrowserRouter, Navigate } from 'react-router-dom';
 import {Routes, Route} from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

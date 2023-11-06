@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteTodo, setTodo } from "./todosReducer"
+import { deleteTodo, setTodo } from "./todosReducer.js"
 
 function TodoItem({ todo }) {
     const dispatch = useDispatch();

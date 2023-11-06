@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import CounterRedux from "../CounterRedux";
-import AddRedux from "../AddRedux";
-import TodoList from "../todos/TodoList";
+import CounterRedux from "../CounterRedux/index.js";
+import AddRedux from "../AddRedux/index.js";
+import TodoList from "../todos/TodoList.js";
 
 function HelloRedux() {
     const { message } = useSelector((state) => state.helloReducer);

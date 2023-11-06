@@ -1,8 +1,6 @@
-import ModuleList from "../Modules/ModuleList";
+import ModuleList from "../Modules/ModuleList.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBan, faSquareCheck, faFileExport, faBullseye, faChartSimple, faScroll, faBell, faCalendar } from '@fortawesome/free-solid-svg-icons';
-import CourseStatus from "./CourseStatus";
+import CourseStatus from "./CourseStatus/index.js";
 
 
 

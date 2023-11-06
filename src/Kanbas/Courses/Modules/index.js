@@ -1,4 +1,4 @@
-import ModuleList from "./ModuleList";
+import ModuleList from "./ModuleList.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Modules() {

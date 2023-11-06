@@ -1,18 +1,18 @@
 import { Route, Routes, Navigate } from "react-router";
 import './index.css';
-import Dashboard from "./Dashboard";
-import Account from "./Account";
-import KanbasNavigation from "./KanbasNavigation";
-import Courses from "./Courses";
+import Dashboard from "./Dashboard/index.js";
+import Account from "./Account/index.js";
+import KanbasNavigation from "./KanbasNavigation/index.js";
+import Courses from "./Courses/index.js";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useLocation } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 
-import db from "./Database";
+import db from "./Database/index.js";
 
-import store from "./store";
+import store from "./store/index.js";
 import { Provider } from "react-redux";
 
 function Kanbas() {

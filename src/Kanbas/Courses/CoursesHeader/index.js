@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { FaBars, FaGlasses } from 'react-icons/fa';
+import { FaBars, FaGlasses } from 'react-icons/fa/index.js';
 import { useLocation, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Dropdown } from 'react-bootstrap';
-import Dashboard from "../../Dashboard"
-import CourseNavigation from "../CourseNavigation";
+import Dashboard from "../../Dashboard/index.js"
+import CourseNavigation from "../CourseNavigation/index.js";
 import "./index.css"
 
 

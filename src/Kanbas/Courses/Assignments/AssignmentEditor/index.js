@@ -13,7 +13,7 @@ import {
     updateAssignment,
     setAssignment
     
- } from "../assignmentsReducer";
+ } from "../assignmentsReducer.js";
 
 function AssignmentEditor() {
     const { assignmentId } = useParams();

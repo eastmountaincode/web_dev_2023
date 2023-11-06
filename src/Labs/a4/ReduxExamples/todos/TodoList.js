@@ -1,6 +1,6 @@
 import React from "react";
-import TodoForm from "./TodoForm";
-import TodoItem from "./TodoItem";
+import TodoForm from "./TodoForm.js";
+import TodoItem from "./TodoItem.js";
 import { useSelector } from "react-redux";
 
 function TodoList() {

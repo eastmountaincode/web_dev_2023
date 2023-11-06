@@ -1,8 +1,8 @@
-import Classes from "./Classes";
-import ConditionalOutput from "./ConditionalOutput";
-import JavaScript from "./JavaScript";
-import Styles from "./Styles";
-import TodoList from "./Todo/TodoList";
+import Classes from "./Classes/index.js";
+import ConditionalOutput from "./ConditionalOutput/index.js";
+import JavaScript from "./JavaScript.js";
+import Styles from "./Styles/index.js";
+import TodoList from "./Todo/TodoList.js";
 import { useSelector } from "react-redux"
 
 function Assignment3() {

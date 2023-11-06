@@ -1,7 +1,7 @@
 import {React} from "react";
 import { useParams } from "react-router-dom";
 
-import { FaGripVertical, FaEllipsisV, FaPlus } from 'react-icons/fa';
+import { FaGripVertical, FaEllipsisV, FaPlus } from 'react-icons/fa/index.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css"
@@ -12,7 +12,7 @@ import {
     deleteModule,
     updateModule,
     setModule
-} from "./modulesReducer"
+} from "./modulesReducer.js"
 
 function ModuleList() {
     const { courseId } = useParams();

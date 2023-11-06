@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import db from "../../../Database";
+import db from "../../../Database/index.js";
 
 
 function CourseDetails() {

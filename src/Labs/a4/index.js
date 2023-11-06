@@ -1,18 +1,17 @@
 import React from "react";
-import Add from "./Add";
-import ClickEvent from "./ClickEvent";
-import PassingDataOnEvent from "./PassingDataOnEvent";
-import PassingFunctions from "./PassingFunction";
-import EventObject from "./EventObject";
-import Counter from "./Counter";
-import BooleanStateVariables from "./BooleanStateVariables";
-import StringStateVariables from "./StringStateVariables";
-import DateStateVariable from "./DateStateVariable";
-import ObjectStateVariable from "./ObjectStateVariable";
-import ArrayStateVariable from "./ArrayStateVariable";
-import ParentStateComponent from "./ParentStateComponent";
-import ChildStateComponent from "./ChildStateComponent";
-import ReduxExamples from "./ReduxExamples/HelloRedux";
+import Add from "./Add.js";
+import ClickEvent from "./ClickEvent.js";
+import PassingDataOnEvent from "./PassingDataOnEvent.js";
+import PassingFunctions from "./PassingFunction.js";
+import EventObject from "./EventObject.js";
+import Counter from "./Counter.js";
+import BooleanStateVariables from "./BooleanStateVariables.js";
+import StringStateVariables from "./StringStateVariables.js";
+import DateStateVariable from "./DateStateVariable.js";
+import ObjectStateVariable from "./ObjectStateVariable.js";
+import ArrayStateVariable from "./ArrayStateVariable.js";
+import ParentStateComponent from "./ParentStateComponent.js";
+import ReduxExamples from "./ReduxExamples/HelloRedux/index.js";
 
 const Assignment4 = () => {
     function sayHello() {

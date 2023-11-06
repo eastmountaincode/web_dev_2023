@@ -1,11 +1,11 @@
-import ArrayIndexAndLength from "./ArrayIndexAndLength";
-import AddingAndRemovingDataToFromArrays from "./AddingAndRemovingDataToFromArrays";
-import ForLoops from "./ForLoops";
-import MapFunction from "./MapFunction";
-import JsonStringify from "./JsonStringify";
-import FindFunction from "./FindFunction";
-import FindIndex from "./FindIndex";
-import FilterFunction from "./FilterFunction";
+import ArrayIndexAndLength from "./ArrayIndexAndLength.js";
+import AddingAndRemovingDataToFromArrays from "./AddingAndRemovingDataToFromArrays.js";
+import ForLoops from "./ForLoops.js";
+import MapFunction from "./MapFunction.js";
+import JsonStringify from "./JsonStringify.js";
+import FindFunction from "./FindFunction.js";
+import FindIndex from "./FindIndex.js";
+import FilterFunction from "./FilterFunction.js";
 
 function WorkingWithArrays() {
     var functionScoped = 2;

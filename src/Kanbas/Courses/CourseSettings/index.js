@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CourseDetails from './CourseDetails';
-import SettingsNavigation from './SettingsNavigation';
+import CourseDetails from './CourseDetails/index.js';
+import SettingsNavigation from './SettingsNavigation/index.js';
 
 function CourseSettings() {
     const [activeTab, setActiveTab] = useState('course-details');

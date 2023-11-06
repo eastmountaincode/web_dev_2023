@@ -1,14 +1,14 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import CourseNavigation from "./CourseNavigation"
+import CourseNavigation from "./CourseNavigation/index.js"
 import './index.css'
-import Modules from "./Modules";
-import Home from "./Home"
+import Modules from "./Modules/index.js";
+import Home from "./Home/index.js"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Assignments from "./Assignments";
-import AssignmentEditor from "./Assignments/AssignmentEditor";
-import Grades from "./Grades";
-import CourseSettings from "./CourseSettings"
-import CoursesHeader from "./CoursesHeader";
+import Assignments from "./Assignments/index.js";
+import AssignmentEditor from "./Assignments/AssignmentEditor/index.js";
+import Grades from "./Grades/index.js";
+import CourseSettings from "./CourseSettings/index.js"
+import CoursesHeader from "./CoursesHeader/index.js";
 
 
 

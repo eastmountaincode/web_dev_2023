@@ -1,12 +1,12 @@
 import React from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaGripVertical, FaChevronDown, FaPlus, FaEllipsisV } from 'react-icons/fa';
+import { FaGripVertical, FaChevronDown, FaPlus, FaEllipsisV } from 'react-icons/fa/index.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import "./index.css"
 import { useSelector, useDispatch } from "react-redux";
-import { deleteAssignment } from "./assignmentsReducer";
+import { deleteAssignment } from "./assignmentsReducer.js";
 
 
 

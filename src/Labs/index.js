@@ -1,10 +1,10 @@
 import { Provider } from "react-redux";
-import Nav from "../Nav";
-import Assignment3 from "./a3";
-import Assignment4 from "./a4";
-import Assignment5 from "./a5";
+import Nav from "../Nav.js";
+import Assignment3 from "./a3/index.js";
+import Assignment4 from "./a4/index.js";
+import Assignment5 from "./a5/index.js";
 import { Routes, Route, Navigate } from "react-router";
-import store from "./store";
+import store from "./store/index.js";
 
 
 function Labs() {

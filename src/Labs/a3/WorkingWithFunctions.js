@@ -1,7 +1,7 @@
-import ES5Functions from "./ES5Functions";
-import ArrowFunctions from "./ArrowFunctions";
-import ImpliedReturn from "./ImpliedReturn"
-import FunctionParenthesisAndParameters from "./FunctionParenthesisAndParameters";
+import ES5Functions from "./ES5Functions.js";
+import ArrowFunctions from "./ArrowFunctions.js";
+import ImpliedReturn from "./ImpliedReturn.js"
+import FunctionParenthesisAndParameters from "./FunctionParenthesisAndParameters.js";
 
 function WorkingWithFunctions() {
     return (
