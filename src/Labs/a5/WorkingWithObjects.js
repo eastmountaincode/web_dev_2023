@@ -13,8 +13,9 @@ function WorkingWithObjects() {
     });
 
     const handleCompletedRadioChange = (event) => {
-        setAssignment({ ...assignment, completed: event.target.value === 'true' });
+        setAssignment({ ...assignment, completed: event.target.value === 'true' ? true : false });
     };
+    
 
     return (
         <div>
@@ -68,7 +69,7 @@ function WorkingWithObjects() {
                 <input
                     type="radio"
                     id="completedTrue"
-                    name="completedStatus"
+                    name="objectCompletedStatus"
                     value="true"
                     checked={assignment.completed === true}
                     onChange={handleCompletedRadioChange}
@@ -78,7 +79,7 @@ function WorkingWithObjects() {
                 <input
                     type="radio"
                     id="completedFalse"
-                    name="completedStatus"
+                    name="objectCompletedStatus"
                     value="false"
                     checked={assignment.completed === false}
                     onChange={handleCompletedRadioChange}
