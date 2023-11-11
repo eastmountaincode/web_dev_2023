@@ -19,7 +19,10 @@ function Kanbas() {
     const isCoursesPage = location.pathname.includes("Courses");
 
     const [isScreenWidthMdOrLarger, setIsScreenWidthMdOrLarger] = useState(window.innerWidth >= 768);
-    const URL = "http://localhost:4000/api/courses";
+
+    const API_BASE = process.env.REACT_APP_API_BASE;
+
+    const URL = `${URL}/courses`;
 
     useEffect(() => {
         const handleResize = () => {

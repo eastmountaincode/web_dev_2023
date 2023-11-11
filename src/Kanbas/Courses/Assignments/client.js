@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ASSIGNMENTS_URL = "http://localhost:4000/api/assignments";
+const ASSIGNMENTS_URL = "https://kanbas-node-server-app-8b6l.onrender.com/api/assignments";
 
 export const getAssignments = async () => {
     console.log("initiating getAssignments")
