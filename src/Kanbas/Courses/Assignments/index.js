@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaGripVertical, FaChevronDown, FaPlus, FaEllipsisV } from 'react-icons/fa/index.js';
@@ -6,30 +6,37 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import "./index.css"
 import { useSelector, useDispatch } from "react-redux";
-import { deleteAssignment } from "./assignmentsReducer.js";
 
-
+import { setAssignments, deleteAssignment as deleteAssignmentRedux } from "./reducer.js"; 
+import { getAssignments, deleteAssignment } from "./client.js";
 
 
 
 function Assignments() {
     const { courseId } = useParams();
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const assignments = useSelector((state) => state.assignmentsReducer.assignments);
 
 
-    const navigate = useNavigate();
+    useEffect(() => {
+        getAssignments(courseId)
+            .then((assignments) =>
+                dispatch(setAssignments(assignments))
+            );
+    }, [courseId, dispatch]);
 
     const handleAddAssignment = () => {
-        console.log("add button clicked")
+        console.log("Add button clicked");
         navigate(`/Kanbas/Courses/${courseId}/Assignments/new`);
-    }
+    };
 
-    const handleDeleteClick = (assignmentId) => {
-        const isConfirmed = window.confirm("Are you sure you want to remove this assignment?");
-        if (isConfirmed) {
-            dispatch(deleteAssignment(assignmentId));
+    const handleDeleteClick = async (assignmentId) => {
+        try {
+            await deleteAssignment(assignmentId);
+            dispatch(deleteAssignmentRedux(assignmentId));
+        } catch (error) {
+            console.error('Failed to delete assignment:', error);
         }
     };
 

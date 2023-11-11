@@ -7,26 +7,23 @@ import { faCircleCheck, } from "@fortawesome/free-regular-svg-icons";
 import { Typeahead } from "react-bootstrap-typeahead";
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import { useSelector, useDispatch } from "react-redux";
-import { 
-    addAssignment,
-    selectAssignment,
-    updateAssignment,
-    setAssignment
-    
- } from "../assignmentsReducer.js";
+
+import * as assignmentsReducer from '../reducer.js'
+import * as client from "../client.js";
 
 function AssignmentEditor() {
     const { assignmentId } = useParams();
-    //console.log("assignmentId: ", assignmentId);
+    console.log("assignmentId: ", assignmentId);
     const { courseId } = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+    const assignment = useSelector((state) => state.assignmentsReducer.assignment);
 
     useEffect(() => {
         if (assignmentId === 'new') {
-            dispatch(selectAssignment({
+            dispatch(assignmentsReducer.setAssignment({
                 title: "Default Assignment Title",
                 course: courseId,
                 dueDate: "2024-01-01",
@@ -37,26 +34,36 @@ function AssignmentEditor() {
         } else {
             const foundAssignment = assignments.find(a => a._id === assignmentId);
             if (foundAssignment) {
-                dispatch(selectAssignment(foundAssignment));
+                dispatch(assignmentsReducer.setAssignment(foundAssignment));
             }
         }
     }, [assignmentId, courseId, dispatch, assignments]);
 
-    const assignment = useSelector((state) => state.assignmentsReducer.assignment);
-
-    const handleSave = () => {
-        // If it's a new assignment
+    const handleSave = async () => {
         if (assignmentId === 'new') {
-            console.log("adding new assignment")
-            console.log(assignment)
-            dispatch(addAssignment(assignment));
-        } else { // Otherwise, update the existing assignment
-            console.log("updating existing assignment")
-            console.log(assignment)
-            dispatch(updateAssignment(assignment));
+            try {
+                //server update
+                const newAssignment = await client.createAssignment(assignment);
+                //local update
+                dispatch(assignmentsReducer.addAssignment(newAssignment));
+                navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+            } catch (error) {
+                console.error('Error creating assignment:', error);
+            }
+        } else {
+            try {
+                //server update
+                const updatedAssignment = await client.updateAssignment({
+                    ...assignment,
+                    _id: assignmentId 
+                });
+                //local update
+                dispatch(assignmentsReducer.updateAssignment(updatedAssignment));
+                navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+            } catch (error) {
+                console.error('Error updating assignment:', error);
+            }
         }
-        // After saving, navigate back to the list of assignments
-        navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
     
     
@@ -89,7 +96,7 @@ function AssignmentEditor() {
                             className="form-control" 
                             id="assignmentName" 
                             value={assignment.title}
-                            onChange={(e) => dispatch(setAssignment({ ...assignment, title: e.target.value }))} />
+                            onChange={(e) => dispatch(assignmentsReducer.setAssignment({ ...assignment, title: e.target.value }))} />
                     </div>
                 </div>
 
@@ -99,7 +106,7 @@ function AssignmentEditor() {
                         id="description" 
                         rows="4" 
                         value={assignment.description}
-                        onChange={(e) => dispatch(setAssignment({ ...assignment, description: e.target.value }))}
+                        onChange={(e) => dispatch(assignmentsReducer.setAssignment({ ...assignment, description: e.target.value }))}
                         >
                     </textarea>
                 </div>
@@ -222,7 +229,7 @@ function AssignmentEditor() {
                                                     className="form-control" 
                                                     id="dueDate" 
                                                     value={assignment.dueDate}
-                                                    onChange={(e) => dispatch(setAssignment({ ...assignment, dueDate: e.target.value }))}/>
+                                                    onChange={(e) => dispatch(assignmentsReducer.setAssignment({ ...assignment, dueDate: e.target.value }))}/>
                                             </div>
 
                                             {/* Available From and Until Dates */}
@@ -234,7 +241,7 @@ function AssignmentEditor() {
                                                         className="form-control" 
                                                         id="availableFrom" 
                                                         value={assignment.availableFromDate}
-                                                        onChange={(e) => dispatch(setAssignment({ ...assignment, availableFromDate: e.target.value }))}/>
+                                                        onChange={(e) => dispatch(assignmentsReducer.setAssignment({ ...assignment, availableFromDate: e.target.value }))}/>
                                                 </div>
                                                 <div className="col-6" >
                                                     <label htmlFor="availableUntil">Until</label>
@@ -243,7 +250,7 @@ function AssignmentEditor() {
                                                         className="form-control" 
                                                         id="availableUntil" 
                                                         value={assignment.availableUntilDate} 
-                                                        onChange={(e) => dispatch(setAssignment({ ...assignment, availableUntilDate: e.target.value }))}/>
+                                                        onChange={(e) => dispatch(assignmentsReducer.setAssignment({ ...assignment, availableUntilDate: e.target.value }))}/>
                                                 </div>
                                             </div>
 

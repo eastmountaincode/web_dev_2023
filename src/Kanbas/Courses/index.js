@@ -9,20 +9,30 @@ import AssignmentEditor from "./Assignments/AssignmentEditor/index.js";
 import Grades from "./Grades/index.js";
 import CourseSettings from "./CourseSettings/index.js"
 import CoursesHeader from "./CoursesHeader/index.js";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 
+function Courses() {
+    const API_BASE_URL = "http://localhost:4000/api/courses";
 
+    const { courseId } = useParams();
+    const [course, setCourse] = useState({});
+    const findCourseById = async (courseId) => {
+        const response = await axios.get(
+            `${API_BASE_URL}/${courseId}`
+        );
+        setCourse(response.data);
+    }
+    useEffect(() => {
+        findCourseById(courseId);
+    }, [courseId])
 
-function Courses( {courses} ) {
-    //const { courseId } = useParams();
-    //const course = courses.find((course) => course._id === courseId)
-    
-    //const location = useLocation();
-    //const currentPage = decodeURIComponent(location.pathname.split("/").pop()) || "Home";
     return (
         <div className="container-fluid" style={{paddingTop: "0"}}>
             <div className="">
-                <CoursesHeader courses={courses}/>
+                <CoursesHeader course={course}/>
             </div>
             <div className="row">
                 <div className="d-flex">

@@ -1,10 +1,28 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useParams } from "react-router-dom";
-import db from "../../../Database/index.js";
 
+const API_BASE_URL = "http://localhost:4000/api/courses";
 
 function CourseDetails() {
     const { courseId } = useParams();
-    const course = db.courses.find((course) => course._id === courseId);
+    const [course, setCourse] = useState({});
+
+    const findCourseById = async (id) => {
+        try {
+            const response = await axios.get(`${API_BASE_URL}/${id}`);
+            setCourse(response.data);
+        } catch (error) {
+            console.error('Error fetching course details:', error);
+        }
+    };
+
+    useEffect(() => {
+        if (courseId) {
+            findCourseById(courseId);
+        }
+    }, [courseId]);
+    
     return (
         <div id="course-details" className="tab-pane fade show active">
             <h4 className="mt-3 mb-4">Course Details</h4>

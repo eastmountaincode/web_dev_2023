@@ -1,8 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function EncodingParametersInURLs() {
     const [a, setA] = useState(34);
     const [b, setB] = useState(23);
+    const [welcome, setWelcome] = useState("");
+    const fetchWelcome = async () => {
+        try {
+            const response = await axios.get("http://localhost:4000/a5/welcome");
+            setWelcome(response.data);
+        } catch (error) {
+            console.error('Error fetching welcome message:', error);
+        }
+    }
+    useEffect(() => {
+        fetchWelcome();
+    }, []);
+
+    const [result, setResult] = useState(0);
+    const fetchSum = async (a, b) => {
+        const response = await axios.get(`http://localhost:4000/a5/add/${a}/${b}`);
+        setResult(response.data);
+    }
+    const fetchSubtraction = async (a, b) => {
+        const response = await axios.get(`http://localhost:4000/a5/subtract/${a}/${b}`);
+        setResult(response.data);
+    }
 
     return (
         <div>
@@ -20,6 +43,21 @@ function EncodingParametersInURLs() {
                 type="number"
                 value={b}
             />
+            <input value={result}
+            className="form-control mb-2" type="number" readOnly
+            />
+            <h3>Fetch Result</h3>
+            <div className="w-25">
+                <button onClick={() => fetchSum(a, b)}
+                className="btn btn-primary mb-2  w-100" >
+                Fetch Sum of {a} + {b}
+                </button>
+
+                <button onClick={() => fetchSubtraction(a, b)}
+                className="btn btn-danger me-2 w-100" >
+                Fetch Substraction of {a} - {b}
+                </button>
+            </div>
             <h3>Path Parameters</h3>
             <a
                 href={`http://localhost:4000/a5/add/${a}/${b}`}
@@ -43,6 +81,11 @@ function EncodingParametersInURLs() {
             className="btn btn-danger">
             Substract {a} - {b}
             </a>
+            <br></br>
+
+            <h4>Integrating React with APIs</h4>
+            <h5>Fetching Welcome</h5>
+            <h5>Welcome message: {welcome}</h5>
         </div>
     );
 }

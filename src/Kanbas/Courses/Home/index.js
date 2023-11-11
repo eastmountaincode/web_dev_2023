@@ -3,8 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CourseStatus from "./CourseStatus/index.js";
 
 
-
-
 function Home() {
     return (
         <div className="container-fluid" style={{padding: "0"}}>

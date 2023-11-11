@@ -8,9 +8,8 @@ import CourseNavigation from "../CourseNavigation/index.js";
 import "./index.css"
 
 
-function CoursesHeader({ courses }) {
-    const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId);
+function CoursesHeader({course}) {
+
     const location = useLocation();
     const currentPage = decodeURIComponent(location.pathname.split("/").pop()) || "Home";
 
@@ -46,7 +45,7 @@ function CoursesHeader({ courses }) {
                         <nav aria-label="breadcrumb" style={{paddingTop: "1px"}}>
                             <ol className="breadcrumb">
                                 <li className="breadcrumb-item">
-                                    <Link to={`/Kanbas/Courses/${courseId}/Home`} className="red-link no-text-decoration">{course.name}.{course.number}</Link>
+                                    <Link to={`/Kanbas/Courses/${course._id}/Home`} className="red-link no-text-decoration">{course.name}.{course.number}</Link>
                                 </li>
                                 <li className="breadcrumb-item active" aria-current="page">{currentPage}</li>
                             </ol> 

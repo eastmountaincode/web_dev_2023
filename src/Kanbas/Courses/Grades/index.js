@@ -1,4 +1,4 @@
-import db from "../../Database/index.js";
+import db from "../../../Database/index.js"
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faFileImport, faFileExport, faCog, faFilter } from '@fortawesome/free-solid-svg-icons';

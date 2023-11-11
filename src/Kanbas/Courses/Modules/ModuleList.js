@@ -1,4 +1,4 @@
-import {React} from "react";
+import {React, useEffect} from "react";
 import { useParams } from "react-router-dom";
 
 import { FaGripVertical, FaEllipsisV, FaPlus } from 'react-icons/fa/index.js';
@@ -7,20 +7,41 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css"
 
 import { useDispatch, useSelector } from "react-redux";
-import {
-    addModule,
-    deleteModule,
-    updateModule,
-    setModule
-} from "./modulesReducer.js"
+
+import * as modulesReducer from "./reducer.js"
+import * as client from "./client.js"
 
 function ModuleList() {
+    const dispatch = useDispatch();
     const { courseId } = useParams();
-
     const modules = useSelector((state) => state.modulesReducer.modules);
     const module = useSelector((state) => state.modulesReducer.module);
-    const dispatch = useDispatch();
 
+    useEffect(() => {
+        client.findModulesForCourse(courseId)
+            .then((modules) =>
+                dispatch(modulesReducer.setModules(modules))
+        );
+    }, [courseId, dispatch]); 
+
+    const handleAddModule = () => {
+        client.createModule(courseId, module).then((module) => {
+            dispatch(modulesReducer.addModule(module));
+        });
+    };
+
+    const handleDeleteModule = (moduleId) => {
+        client.deleteModule(moduleId).then((status) => {
+            dispatch(modulesReducer.deleteModule(moduleId));
+        });
+    };
+
+    const handleUpdateModule = (moduleId) => {
+        console.log('got request to handle update module');
+        client.updateModule(moduleId).then((status) => {
+            dispatch(modulesReducer.updateModule(moduleId));
+        });
+    };
 
     return (
         <div className="container-fluid">     
@@ -51,7 +72,7 @@ function ModuleList() {
                     className="form-control"
                     id="moduleName"
                     value={module.name}
-                    onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))}
+                    onChange={(e) => dispatch(modulesReducer.setModule({ ...module, name: e.target.value }))}
                 />
                 <label htmlFor="moduleDescription" className="form-label mt-2 mb-1">Description</label>
                 <textarea 
@@ -59,11 +80,11 @@ function ModuleList() {
                     id="moduleDescription"
                     rows="3"
                     value={module.description}
-                    onChange={(e) => dispatch(setModule({ ...module, description: e.target.value }))}
+                    onChange={(e) => dispatch(modulesReducer.setModule({ ...module, description: e.target.value }))}
                 />
                 <div style={{display: "flex", flexDirection: "column", alignItems:"flex-start"}}>
-                    <button className="btn btn-success mt-3" onClick={() => dispatch(addModule({...module, course: courseId }))}>Add</button>
-                    <button className="btn btn-info mt-2" style={{color: "white"}} onClick={() => dispatch(updateModule(module))}>Update</button>
+                    <button className="btn btn-success mt-3" onClick={handleAddModule}>Add</button>
+                    <button className="btn btn-info mt-2" style={{color: "white"}} onClick={() => handleUpdateModule(module)}>Update</button>
                 </div>
             </div>
 
@@ -83,8 +104,8 @@ function ModuleList() {
                                 </div>
                             </div>
                             <div className="d-flex ms-2">
-                                <button className="btn btn-outline-secondary" onClick={() => dispatch(setModule(module))}>Edit</button>
-                                <button className="btn btn-outline-danger ms-1" onClick={() => dispatch(deleteModule(module._id))}>Delete</button>
+                                <button className="btn btn-outline-secondary" onClick={() => dispatch(modulesReducer.setModule(module))}>Edit</button>
+                                <button className="btn btn-outline-danger ms-1" onClick={() => handleDeleteModule(module._id)}>Delete</button>
                             </div>
                         </div>
                     ))} 
