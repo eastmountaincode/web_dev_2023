@@ -38,12 +38,12 @@ function WorkingWithObjects() {
         <div>
             <h3>Working With Objects</h3>
             <h4>Retrieving Objects</h4>
-            <a href="https://kanbas-node-server-app-8b6l.onrender.com/a5/assignment" className="btn btn-primary me-2">
+            <a href={`${URL}`} className="btn btn-primary me-2">
                 Get Assignment
             </a>
             <h4>Retrieving Properties</h4>
             <a
-                href="https://kanbas-node-server-app-8b6l.onrender.com/a5/assignment/title"
+                href={`${URL}/title`}
                 className="btn btn-primary me-2">
                 Get Title
             </a>

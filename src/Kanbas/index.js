@@ -22,7 +22,7 @@ function Kanbas() {
 
     const API_BASE = process.env.REACT_APP_API_BASE;
 
-    const URL = `${URL}/courses`;
+    const URL = `${API_BASE}/courses`;
 
     useEffect(() => {
         const handleResize = () => {

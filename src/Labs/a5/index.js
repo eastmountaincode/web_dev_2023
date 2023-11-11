@@ -12,9 +12,9 @@ function Assignment5() {
                     Welcome
                 </a>
             </div>
-            {/* <EncodingParametersInURLs />
+            <EncodingParametersInURLs />
             <WorkingWithObjects />
-            <WorkingWithArrays /> */}
+            <WorkingWithArrays />
         </div>
     );
 }
