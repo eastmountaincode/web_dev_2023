@@ -1,14 +1,32 @@
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
 import db from "../../../Database/index.js"
-import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faFileImport, faFileExport, faCog, faFilter } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import * as assignmentsReducer from '../Assignments/reducer.js';
+import * as assignmentsClient from '../Assignments/client.js';
 
 function Grades() {
     const { courseId } = useParams();
+    const dispatch = useDispatch();
+
+    const allAssignments = useSelector((state) => state.assignmentsReducer.assignments);
+    useEffect(() => {
+        assignmentsClient.getAssignments(courseId)
+            .then((assignmentsFromServer) =>
+                dispatch(assignmentsReducer.setAssignments(assignmentsFromServer))
+            );
+    }, [courseId, dispatch]);
+
+    const assignments = allAssignments.filter((assignment) => assignment.course === courseId);
+
+
+
     const users = db.users;
-    const assignments = db.assignments.filter((assignment) => assignment.course === courseId);
     const enrollments = db.enrollments.filter((enrollment) => enrollment.course === courseId);
     const grades = db.grades;
 
@@ -102,34 +120,5 @@ function Grades() {
             </div>
         </div>
     );
-    
-
-        // <div>
-        //     <h1>Grades</h1>
-        //     <div className="table-responsive">
-        //         <table className="table">
-        //             <thead>
-        //                 <th>Student Name</th>
-        //                 {assignments.map((assignment) => (<th>{assignment.title}</th>))}
-        //             </thead>
-        //             <tbody>
-        //                 {enrollments.map((enrollment) => {
-        //                     const user = users.find((user) => user._id === enrollment.user);
-        //                     return (
-        //                         <tr>
-        //                             <td>{user.firstName} {user.lastName}</td>
-        //                             {assignments.map((assignment) => {
-        //                                 const grade = grades.find(
-        //                                 (grade) => grade.student === enrollment.user && grade.assignment === assignment._id);
-        //                             return (<td>{grade?.grade || ""}</td>);
-        //                             })} 
-        //                         </tr>
-        //                     );
-        //                 })} 
-        //             </tbody>
-        //         </table>
-        //     </div>
-        // </div>
-    
 }
 export default Grades

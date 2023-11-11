@@ -7,9 +7,8 @@ import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import "./index.css"
 import { useSelector, useDispatch } from "react-redux";
 
-import { setAssignments, deleteAssignment as deleteAssignmentRedux } from "./reducer.js"; 
-import { getAssignments, deleteAssignment } from "./client.js";
-
+import * as assignmentsReducer from "./reducer.js"; 
+import * as client from "./client.js";
 
 
 function Assignments() {
@@ -20,9 +19,9 @@ function Assignments() {
 
 
     useEffect(() => {
-        getAssignments(courseId)
+        client.getAssignments(courseId)
             .then((assignments) =>
-                dispatch(setAssignments(assignments))
+                dispatch(assignmentsReducer.setAssignments(assignments))
             );
     }, [courseId, dispatch]);
 
@@ -33,8 +32,10 @@ function Assignments() {
 
     const handleDeleteClick = async (assignmentId) => {
         try {
-            await deleteAssignment(assignmentId);
-            dispatch(deleteAssignmentRedux(assignmentId));
+            // update server
+            await client.deleteAssignment(assignmentId);
+            // update locally
+            dispatch(assignmentsReducer.deleteAssignment(assignmentId));
         } catch (error) {
             console.error('Failed to delete assignment:', error);
         }

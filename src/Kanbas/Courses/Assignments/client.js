@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const ASSIGNMENTS_URL = "https://kanbas-node-server-app-8b6l.onrender.com/api/assignments";
+const API_BASE = process.env.REACT_APP_API_BASE;
+
+const ASSIGNMENTS_URL = `${API_BASE}/assignments`;
 
 export const getAssignments = async () => {
     console.log("initiating getAssignments")
