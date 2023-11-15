@@ -23,6 +23,7 @@ const assignmentsSlice = createSlice({
       };
       console.log('new assignment in reducer', newAssignment);
       state.assignments = [newAssignment, ...state.assignments];
+      console.log('state.assignments after adding new assignment:', state.assignments);
     },
     deleteAssignment: (state, action) => {
       state.assignments = state.assignments.filter(

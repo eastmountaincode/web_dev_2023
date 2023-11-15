@@ -45,6 +45,7 @@ function AssignmentEditor() {
 
 
     const handleSave = async () => {
+        // NEW ASSIGNMENT
         if (assignmentId === 'new') {
             try {
                 //server update
@@ -56,6 +57,7 @@ function AssignmentEditor() {
             } catch (error) {
                 console.error('Error creating assignment:', error);
             }
+        // EDITING EXISTING ASSIGNMENT
         } else {
             try {
                 //server update
