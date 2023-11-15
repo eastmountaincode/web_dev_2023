@@ -17,11 +17,11 @@ const assignmentsSlice = createSlice({
   initialState,
   reducers: {
     addAssignment: (state, action) => {
-      console.log('new assignment in reducer');
       const newAssignment = {
         ...action.payload,
         _id: new Date().getTime().toString(),
       };
+      console.log('new assignment in reducer', newAssignment);
       state.assignments = [newAssignment, ...state.assignments];
     },
     deleteAssignment: (state, action) => {
