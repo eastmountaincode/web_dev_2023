@@ -49,6 +49,7 @@ function AssignmentEditor() {
             try {
                 //server update
                 const newAssignment = await client.createAssignment(assignment);
+                console.log("new assignment in assignment editor:", newAssignment);
                 //local update
                 dispatch(assignmentsReducer.addAssignment(newAssignment));
                 navigate(`/Kanbas/Courses/${courseId}/Assignments`);
