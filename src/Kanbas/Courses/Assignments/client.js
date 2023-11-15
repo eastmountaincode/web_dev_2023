@@ -19,6 +19,7 @@ export const getAssignment = async (assignmentId) => {
 export const createAssignment = async (assignment) => {
     console.log('client got this assignment: ', assignment);
     const response = await axios.post(ASSIGNMENTS_URL, assignment);
+    console.log('resposne assignment new: ', response.data);
     return response.data;
 };
 
