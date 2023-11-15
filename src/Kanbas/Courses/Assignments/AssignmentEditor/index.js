@@ -22,22 +22,27 @@ function AssignmentEditor() {
     const assignment = useSelector((state) => state.assignmentsReducer.assignment);
 
     useEffect(() => {
-        if (assignmentId === 'new') {
-            dispatch(assignmentsReducer.setAssignment({
-                title: "Default Assignment Title",
-                course: courseId,
-                dueDate: "2024-01-01",
-                availableFromDate: "2023-12-01",
-                availableUntilDate: "2024-01-15",
-                description: "Default Assignment Description"
-            }));
-        } else {
+        const fetchAssignment = async () => {
+            try {
+                const fetchedAssignment = await client.getAssignment(assignmentId);
+                dispatch(assignmentsReducer.setAssignment(fetchedAssignment));
+            } catch (error) {
+                console.error('Error fetching assignment:', error);
+            }
+        };
+    
+        if (assignmentId !== 'new') {
             const foundAssignment = assignments.find(a => a._id === assignmentId);
             if (foundAssignment) {
                 dispatch(assignmentsReducer.setAssignment(foundAssignment));
+            } else {
+                fetchAssignment();
             }
+        } else {
+            dispatch(assignmentsReducer.setAssignment(initialState.assignment));
         }
     }, [assignmentId, courseId, dispatch, assignments]);
+
 
     const handleSave = async () => {
         if (assignmentId === 'new') {
