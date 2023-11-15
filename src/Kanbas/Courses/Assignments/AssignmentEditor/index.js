@@ -39,7 +39,7 @@ function AssignmentEditor() {
                 fetchAssignment();
             }
         } else {
-            dispatch(assignmentsReducer.setAssignment(initialState.assignment));
+            dispatch(assignmentsReducer.setAssignment(assignmentsReducer.initialState.assignment));
         }
     }, [assignmentId, courseId, dispatch, assignments]);
 

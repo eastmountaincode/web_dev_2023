@@ -54,4 +54,6 @@ export const {
   setAssignments,
 } = assignmentsSlice.actions;
 
+export { initialState };
+
 export default assignmentsSlice.reducer;
