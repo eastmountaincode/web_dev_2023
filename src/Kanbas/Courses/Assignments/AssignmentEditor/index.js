@@ -54,7 +54,7 @@ function AssignmentEditor() {
                     course: courseId
                 };
                 //server update
-                const newAssignment = await client.createAssignment(assignment);
+                const newAssignment = await client.createAssignment(newAssignmentData);
                 console.log("new assignment in assignment editor:", newAssignment);
                 //local update
                 dispatch(assignmentsReducer.addAssignment(newAssignment));
