@@ -4,7 +4,7 @@ const initialState = {
   assignments: [],
   assignment: {
         title: "Default Assignment Title",
-        course: "Default Course ID",
+        course: "",
         dueDate: "2024-01-01",
         availableFromDate: "2023-12-01",
         availableUntilDate: "2024-01-15",

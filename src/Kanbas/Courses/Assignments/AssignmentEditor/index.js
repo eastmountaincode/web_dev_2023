@@ -48,6 +48,11 @@ function AssignmentEditor() {
         // NEW ASSIGNMENT
         if (assignmentId === 'new') {
             try {
+                // Prepare new assignment object with courseId
+                const newAssignmentData = {
+                    ...assignment,
+                    course: courseId
+                };
                 //server update
                 const newAssignment = await client.createAssignment(assignment);
                 console.log("new assignment in assignment editor:", newAssignment);
