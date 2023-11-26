@@ -5,6 +5,7 @@ import Kanbas from './Kanbas/index.js'
 import { BrowserRouter, Navigate } from 'react-router-dom';
 import {Routes, Route} from 'react-router';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Project from './project/index.js';
 
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
     <BrowserRouter>
       
       <Routes>
-        <Route path="/" element={ <Navigate to="/Labs/a4"/>}/>
+        <Route path="/" element={ <Navigate to="/Labs/a5"/>}/>
         <Route path="/hello" element = {<HelloWorld />}/>
+        <Route path="/project/*" element={<Project />}/>
         <Route path="/Labs/*" element = {<Labs />}/>
         <Route path="/kanbas/*" element = {<Kanbas />}/>
       </Routes>
